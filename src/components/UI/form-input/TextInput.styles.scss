@@ -1,0 +1,52 @@
+@import '../general-styles.scss';
+
+@mixin shrinkLabel {
+  top: -1.8rem;
+  font-size: 1rem;
+  color: $color-gray-dark-3;
+}
+
+.form__textarea-container {
+  position: relative;
+  margin: 3.2rem 0;
+
+  .textarea-input {
+    min-height: 12rem;
+    resize: vertical;
+    background: none;
+    background-color: $color-white;
+    color: $color-gray-dark-2;
+    font-size: 1.2rem;
+    padding: 1rem 1rem 1rem 1rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: none;
+    border-bottom: 0.25rem solid $color-gray-dark-1;
+    margin: 2.5rem 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .textarea-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  .textarea-input-label {
+    letter-spacing: 0.05rem;
+    color: $color-gray-dark-1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    pointer-events: none;
+    left: 1rem;
+    top: 1rem;
+    transition: all 0.3s ease;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

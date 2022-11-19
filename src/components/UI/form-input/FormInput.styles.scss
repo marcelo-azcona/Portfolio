@@ -1,0 +1,50 @@
+@import '../general-styles.scss';
+
+@mixin shrinkLabel {
+  top: -1.8rem;
+  font-size: 1rem;
+  color: $color-gray-dark-3;
+}
+
+.form__container {
+  position: relative;
+  margin: 3.2rem 0;
+
+  .form-input {
+    width: 100%;
+    height: 4.2rem;
+    font-size: 1.2rem;
+    background: none;
+    background-color: $color-white;
+    color: $color-gray-dark-2;
+    padding: 1rem 1rem 1rem 1rem;
+    display: block;
+    border: none;
+    border-bottom: 0.25rem solid $color-gray-dark-1;
+    margin: 2.5rem 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  .form-input-label {
+    letter-spacing: 0.05rem;
+    color: $color-gray-dark-1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    pointer-events: none;
+    left: 1rem;
+    top: 1rem;
+    transition: all 0.3s ease;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

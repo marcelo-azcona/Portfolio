@@ -1,0 +1,67 @@
+@import '../../components/UI/general-styles.scss';
+
+.hero {
+  padding-top: 8rem;
+  min-height: 85vh;
+
+  &__content-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__logo-box {
+    width: 35rem;
+    border-radius: 50%;
+  }
+
+  &__logo-img {
+    background-size: cover;
+    background-color: $color-gray-dark-3;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__location-line {
+    font-size: 1.4rem;
+  }
+
+  &__location-box {
+    display: inline-block;
+    width: 1.6rem;
+  }
+
+  &__location-img {
+    background-size: cover;
+    width: 100%;
+    vertical-align: text-top;
+  }
+
+  &__main-header {
+    color: $color-main-title;
+    font-family: 'Poppins';
+    font-weight: 700;
+  }
+
+  &__main-name {
+    font-size: 3rem;
+  }
+
+  &__main-title {
+    line-height: 1;
+    font-size: 9.8rem;
+  }
+
+  &__main-text {
+    font-size: 1.6rem;
+    text-align: start;
+    line-height: 2;
+    margin: 5rem 0;
+    width: 60%;
+  }
+
+  &__drop {
+    display: inline-block;
+  }
+}

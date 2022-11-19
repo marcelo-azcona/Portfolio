@@ -1,0 +1,48 @@
+@import '../general-styles.scss';
+
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  transition: all 0.5s;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  &--dark {
+    background-color: $color-gray-dark-2;
+    color: $color-white;
+    text-transform: uppercase;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba($color-gray-dark-2, 0.6);
+
+      &::after {
+        transform: scaleX(1.3) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      transform: translate(-1px);
+    }
+
+    &::after {
+      background-color: $color-gray-dark-2;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-out;
+  }
+}

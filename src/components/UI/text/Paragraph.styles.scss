@@ -1,0 +1,25 @@
+@import '../../UI/general-styles.scss';
+
+.paragraph-light {
+  color: $color-white;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+
+  &--bf {
+    font-size: 1.6rem;
+  }
+
+  &--ct {
+    text-align: center;
+  }
+}
+
+.paragraph-dark {
+  color: $color-black;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+}

@@ -1,0 +1,71 @@
+@import '../../UI/general-styles.scss';
+
+.h3header {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+
+  &--white {
+    color: $color-white;
+  }
+}
+
+.h4header {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+
+  &--white {
+    color: $color-white;
+  }
+}
+
+@mixin gradientStyle {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin headerStyle {
+  display: inline-block;
+  font-family: 'Poppins';
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+
+.projects__header,
+.about__header,
+.contact__header {
+  text-align: center;
+}
+
+.projects__title {
+  @include headerStyle();
+  background-color: $color-project-title-1;
+  background-image: linear-gradient(
+    45deg,
+    $color-project-title-1,
+    $color-project-title-2
+  );
+  @include gradientStyle();
+}
+
+.about__title {
+  @include headerStyle();
+  background-color: $color-project-title-3;
+  background-image: linear-gradient(
+    45deg,
+    $color-project-title-3,
+    $color-project-title-4
+  );
+  @include gradientStyle();
+}
+
+.contact__title {
+  @include headerStyle();
+  background-color: $color-project-title-1;
+  background-image: linear-gradient(
+    45deg,
+    $color-project-title-1,
+    $color-project-title-2
+  );
+  @include gradientStyle();
+}

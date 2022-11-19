@@ -1,0 +1,154 @@
+@import '../general-styles.scss';
+
+.submit__text,
+.submitted__svg,
+.error__svg {
+  position: absolute;
+  color: $color-white;
+  fill: transparent;
+  transition: all 0.4s;
+}
+
+.submitted__svg,
+.error__svg {
+  height: 2.4rem;
+  width: 12.4rem;
+}
+
+.submit__btn {
+  display: flex;
+  text-transform: uppercase;
+  background-color: $color-gray-dark-2;
+  width: 30%;
+  height: 4rem;
+  border: 2px solid $color-gray-dark-2;
+  border-radius: 11px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.2);
+
+    .submitted__svg {
+      font-size: 1.3rem;
+      transition: all 0.4s;
+    }
+  }
+
+  &.loading {
+    background-color: inherit;
+    outline: none;
+    box-shadow: none;
+    width: 4rem;
+    border-radius: 50%;
+    border: 4px solid $color-gray-dark-1;
+    border-top-color: $color-gray-dark-2;
+    pointer-events: none;
+    animation: spin 2s 500ms ease-in-out infinite;
+    -webkit-animation: spin 2s 500ms ease-in-out infinite;
+
+    span {
+      display: none;
+    }
+  }
+
+  &.success {
+    background-color: inherit;
+    outline: none;
+    box-shadow: none;
+    width: 4rem;
+    border-radius: 50%;
+    border: 4px solid $color-gray-dark-2;
+    pointer-events: none;
+    animation: translateToTop 500ms forwards;
+    -webkit-animation: translateToTop 500ms forwards;
+
+    .submitted__svg {
+      animation: successTick 500ms forwards;
+    }
+
+    span {
+      display: none;
+    }
+
+    &::after {
+      content: 'Submitted!';
+      color: $color-gray-dark-2;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 1rem;
+      animation: translateToBottom 500ms forwards;
+      -webkit-animation: translateToBottom 500ms forwards;
+    }
+  }
+
+  &.error {
+    background-color: inherit;
+    outline: none;
+    box-shadow: none;
+    width: 4rem;
+    border-radius: 50%;
+    border: 4px solid $color-gray-dark-2;
+    pointer-events: none;
+    animation: translateToTop 500ms forwards;
+    -webkit-animation: translateToTop 500ms forwards;
+
+    .error__svg {
+      animation: successTick 500ms forwards;
+    }
+
+    span {
+      display: none;
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      top: 0.5rem;
+      content: 'Upss some error happened! Try again!';
+      color: $color-gray-dark-2;
+      font-size: 1.2rem;
+      width: 15rem;
+      height: 1rem;
+      animation: translateToBottom 500ms forwards;
+      -webkit-animation: translateToBottom 500ms forwards;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes successTick {
+  to {
+    fill: $color-gray-dark-2;
+  }
+}
+
+@keyframes failedTick {
+  to {
+    fill: $color-gray-dark-2;
+  }
+}
+
+@keyframes translateToTop {
+  to {
+    transform: translateY(-1.5rem);
+  }
+}
+
+@keyframes translateToBottom {
+  to {
+    display: block;
+    transform: translateY(4rem);
+  }
+}

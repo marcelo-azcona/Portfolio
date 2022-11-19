@@ -1,0 +1,33 @@
+@import '../UI/general-styles.scss';
+
+.contact-section {
+  background-color: $color-black;
+  padding: 8rem 0;
+}
+
+.contact__container {
+  max-width: 52rem;
+  margin: 0 auto;
+  margin-top: 9.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6.4rem;
+}
+
+.contact__img-box {
+  width: 25rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contact__links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+  gap: 8rem;
+}

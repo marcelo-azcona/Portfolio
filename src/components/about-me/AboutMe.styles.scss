@@ -1,0 +1,45 @@
+@import '../UI/general-styles.scss';
+
+.about-section {
+  background-color: $color-white;
+  padding: 8rem 0;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12rem 24rem 0rem 24rem;
+  gap: 6.4rem;
+}
+
+.about__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+
+.about__img-box {
+  width: 25rem;
+  border-radius: 50%;
+}
+
+.about__img {
+  background-size: cover;
+  background-color: $color-gray-dark-3;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.about__connect {
+  display: flex;
+  gap: 3rem;
+}
+
+.about__techstack {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}

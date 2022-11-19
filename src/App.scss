@@ -1,0 +1,16 @@
+@mixin waveCommon {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 32rem;
+}
+
+.section-wave-top {
+  background-image: url('./assets/svg/waveTop.svg');
+  @include waveCommon();
+}
+
+.section-wave-bottom {
+  background-image: url('./assets/svg/waveBottom.svg');
+  @include waveCommon();
+}
