@@ -3,15 +3,15 @@ import './Header.styles.scss';
 const SectionHeader = ({
   sectionType,
   sectionExtraClass,
-  text,
+  children,
 }: {
   sectionType: string;
   sectionExtraClass?: string;
-  text: string;
+  children: string;
 }) => {
   return (
     <div className={`${sectionType}__header`}>
-      <h2 className={`${sectionType}__title`}>{text}</h2>
+      <h2 className={`${sectionType}__title`}>{children}</h2>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import ContactForm from './ContactForm';
 import LinkWhite from '../UI/links/LinkLight';
 import H3Header from '../UI/headings/H3Header';
@@ -6,13 +8,20 @@ import H2Header from '../UI/headings/H2Header';
 import './ContactSection.styles.scss';
 
 const ContactSection = () => {
+  const ref = useRef(null);
+  // const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
+
   return (
-    <section className="contact-section">
-      <H2Header sectionType="contact" text={'Contact'} />
+    <section className="contact-section" ref={ref}>
+      <H2Header sectionType="contact">Contact</H2Header>
       <div className="contact__container">
         <H3Header extraClass="h3header--white">Let's get in touch!</H3Header>
 
-        <div className="contact__links">
+        <div
+          ref={ref}
+          className={isInView ? 'contact__links' : 'contact__links--off'}
+        >
           <LinkWhite
             extraClass="link__light--mw"
             href="mailto:marceloazcona86@gmail.com"

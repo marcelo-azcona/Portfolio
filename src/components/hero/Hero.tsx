@@ -7,7 +7,7 @@ import './Hero.styles.scss';
 const Hero = () => {
   return (
     <div className="hero">
-      <div className="hero__content-left">
+      <div className="hero__content">
         <div className="hero__logo-box">
           <img
             className="hero__logo-img"
@@ -34,11 +34,12 @@ const Hero = () => {
             <span className="hero__main-title">developer</span>
           </h1>
           <p className="hero__main-text">
-            I’m a Web Developer based in Villa María, Córdoba. Even though I
-            have an Food Engineer degree, coding is what I love and my new
-            professional career focus. That is why I started a Master degree in
-            Software Engineer. Making fun and interactive applications with code
-            has become my passion.
+            I’m a Web Developer based in Villa María, Argentina. Even though I
+            have an Food Engineer degree, coding is what I love. That is why I
+            started a Master degree in Software Engineering. Making fun and
+            interactive applications with code has become my passion.
+            <br />
+            Welcome to my corner of the internet. I'm glad that you're here!
           </p>
           <LinkDark
             href={'resume'} //resume path

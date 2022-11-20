@@ -4,15 +4,18 @@
   padding-top: 8rem;
   min-height: 85vh;
 
-  &__content-left {
+  &__content {
+    // padding: 0 12rem;
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    justify-items: end;
     align-items: center;
   }
 
   &__logo-box {
-    width: 35rem;
+    margin-right: 6.4rem;
+    max-width: 35rem;
     border-radius: 50%;
   }
 
@@ -50,11 +53,12 @@
 
   &__main-title {
     line-height: 1;
-    font-size: 9.8rem;
+    font-size: 10.5rem;
   }
 
   &__main-text {
-    font-size: 1.6rem;
+    color: $color-gray-dark-4;
+    font-size: 1.4rem;
     text-align: start;
     line-height: 2;
     margin: 5rem 0;

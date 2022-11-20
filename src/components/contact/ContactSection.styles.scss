@@ -25,9 +25,17 @@
 }
 
 .contact__links {
+  opacity: 1;
+  transform: translateY(0rem);
+  transition: all 0.5s ease-out;
   display: flex;
   justify-content: space-evenly;
   width: 90%;
   margin: 0 auto;
   gap: 8rem;
+
+  &--off {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
 }

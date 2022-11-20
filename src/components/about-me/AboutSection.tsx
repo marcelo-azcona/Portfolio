@@ -1,12 +1,12 @@
 import ParagraphDark from '../UI/text/ParagraphDark';
-import SectionHeader from '../UI/headings/H2Header';
+import H2Header from '../UI/headings/H2Header';
 import AboutMe from './AboutMe';
 import './AboutMe.styles.scss';
 
 const AboutSection = () => {
   return (
     <section className="about-section">
-      <SectionHeader sectionType="about" text={'About Me'} />
+      <H2Header sectionType="about">About me</H2Header>
       <AboutMe
         projectTitle={`Hi! 👋 I'm Marcelo`}
         techStack={[

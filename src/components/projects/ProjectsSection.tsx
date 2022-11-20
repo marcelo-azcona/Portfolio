@@ -17,7 +17,7 @@ export type ProjectProps = {
 const ProjectsSection = () => {
   return (
     <section id="projects-section" className="projects-section">
-      <H2Header sectionType="projects" text={'Projects'} />
+      <H2Header sectionType="projects">Projects</H2Header>
 
       <ProjectRight
         projectTitle={'Climbours'}
