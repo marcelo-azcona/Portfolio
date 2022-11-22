@@ -8,18 +8,19 @@ import H2Header from '../UI/headings/H2Header';
 import './ContactSection.styles.scss';
 
 const ContactSection = () => {
-  const ref = useRef(null);
-  // const isInView = useInView(ref, { once: true });
-  const isInView = useInView(ref);
+  const linksRef = useRef(null);
+  const isInView = useInView(linksRef, { once: true });
 
   return (
-    <section className="contact-section" ref={ref}>
+    <section className="contact-section">
       <H2Header sectionType="contact">Contact</H2Header>
       <div className="contact__container">
-        <H3Header extraClass="h3header--white">Let's get in touch!</H3Header>
+        <H3Header extraClass="h3header--white h3header--ct">
+          Let's get in touch!
+        </H3Header>
 
         <div
-          ref={ref}
+          ref={linksRef}
           className={isInView ? 'contact__links' : 'contact__links--off'}
         >
           <LinkWhite

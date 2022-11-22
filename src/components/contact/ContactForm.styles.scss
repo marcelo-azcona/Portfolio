@@ -1,9 +1,17 @@
 @import '../UI/general-styles.scss';
 
 .form {
-  background-color: rgb(245, 245, 245);
+  background-color: $color-gray-light-3;
   width: 100%;
   padding: 3.2rem;
   border-radius: 25px;
   text-align: center;
+  opacity: 1;
+  transform: translateY(0rem);
+  transition: all 0.5s ease-out;
+
+  &--off {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
 }
