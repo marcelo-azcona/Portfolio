@@ -1,5 +1,4 @@
-import { InputHTMLAttributes } from 'react';
-import { Path, UseFormRegister, FieldErrorsImpl } from 'react-hook-form';
+import { UseFormRegister, FieldErrorsImpl } from 'react-hook-form';
 import './FormInput.styles.scss';
 
 type IFormValues = {
@@ -7,7 +6,6 @@ type IFormValues = {
   'Your Email': string;
 };
 
-// type FormInputProps = { label: string } & InputHTMLAttributes<HTMLInputElement>;
 type InputProps = {
   label: string;
   register: UseFormRegister<IFormValues>;
@@ -27,8 +25,6 @@ const FormInput = ({
   type,
   touched,
 }: InputProps) => {
-  console.log(touched);
-
   return (
     <div className="form__container">
       <input
@@ -58,26 +54,5 @@ const FormInput = ({
     </div>
   );
 };
-
-// const FormInput = ({ label, ...otherProps }: FormInputProps) => {
-//   return (
-//     <div className="form__container">
-//       <input className="form-input" {...otherProps} />
-//       {label && (
-//         <label
-//           className={`${
-//             otherProps.value &&
-//             typeof otherProps.value === 'string' &&
-//             otherProps.value.length
-//               ? 'shrink'
-//               : ''
-//           } form-input-label`}
-//         >
-//           {label}
-//         </label>
-//       )}
-//     </div>
-//   );
-// };
 
 export default FormInput;
