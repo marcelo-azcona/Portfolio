@@ -83,17 +83,19 @@ const ContactForm = () => {
       'Your Email': yup.string().email().required(),
     })
     .required();
+
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, touchedFields },
   } = useForm<IFormValues>({
+    mode: 'all', //To trigger all types of validation at the same time
     resolver: yupResolver(schema),
   });
 
-  // const nameValue = watch('user_name');
-  // const emailValue = watch('email');
+  const nameValue = watch('Your name');
+  const emailValue = watch('Your Email');
 
   const onSubmit = (data: IFormValues) => console.log(data);
 
@@ -105,6 +107,8 @@ const ContactForm = () => {
         errors={errors}
         name="Your name"
         type="text"
+        value={nameValue}
+        touched={touchedFields['Your name']}
       />
 
       <FormInput
@@ -113,6 +117,8 @@ const ContactForm = () => {
         errors={errors}
         name="Your Email"
         type="email"
+        value={emailValue}
+        touched={touchedFields['Your Email']}
       />
 
       <TextInput

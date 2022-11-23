@@ -30,6 +30,14 @@
     &:focus ~ .form-input-label {
       @include shrinkLabel();
     }
+
+    &--invalid {
+      border-bottom: 0.25rem solid red;
+    }
+
+    &--valid {
+      border-bottom: 0.25rem solid green;
+    }
   }
 
   .form-input-label {
@@ -46,5 +54,14 @@
     &.shrink {
       @include shrinkLabel();
     }
+  }
+
+  .form__error-message {
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    top: 4.5rem;
+    right: 0;
+    position: absolute;
+    color: red;
   }
 }

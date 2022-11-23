@@ -25,6 +25,10 @@
     border-bottom: 0.25rem solid $color-gray-dark-1;
     margin: 2.5rem 0;
 
+    &--valid {
+      border-bottom: 0.25rem solid green;
+    }
+
     &:focus {
       outline: none;
     }

@@ -8,7 +8,14 @@ type TextInputProps = {
 const TextInput = ({ label, ...otherProps }: TextInputProps) => {
   return (
     <div className="form__textarea-container">
-      <textarea className="textarea-input" {...otherProps} />
+      <textarea
+        className={
+          otherProps.value
+            ? 'textarea-input textarea-input--valid'
+            : 'textarea-input'
+        }
+        {...otherProps}
+      />
       {label && (
         <label
           className={`${

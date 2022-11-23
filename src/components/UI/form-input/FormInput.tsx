@@ -12,10 +12,10 @@ type InputProps = {
   label: string;
   register: UseFormRegister<IFormValues>;
   errors: Partial<FieldErrorsImpl<IFormValues>>;
-
-  value?: string;
+  value: string;
   name: 'Your name' | 'Your Email';
   type: string;
+  touched: boolean | undefined;
 };
 
 const FormInput = ({
@@ -25,12 +25,23 @@ const FormInput = ({
   value,
   name,
   type,
+  touched,
 }: InputProps) => {
-  console.log(errors);
+  console.log(touched);
 
   return (
     <div className="form__container">
-      <input type={type} className="form-input" {...register(name)} />
+      <input
+        type={type}
+        className={
+          touched && !errors[name]
+            ? 'form-input form-input--valid'
+            : errors[name]
+            ? 'form-input form-input--invalid'
+            : 'form-input'
+        }
+        {...register(name)}
+      />
       {label && (
         <label
           className={`${
@@ -41,7 +52,9 @@ const FormInput = ({
         </label>
       )}
 
-      {<span>{errors[name]?.message}</span>}
+      {errors[name] && (
+        <span className="form__error-message">{errors[name]?.message}</span>
+      )}
     </div>
   );
 };
