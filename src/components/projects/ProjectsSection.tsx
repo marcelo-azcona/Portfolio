@@ -23,7 +23,7 @@ const ProjectsSection = () => {
         projectTitle={'Climbours'}
         techStack={[
           'HTML5',
-          'CSS3',
+          'SASS',
           'Git & GitHub',
           'JavaScript',
           'ReactJS',
@@ -93,12 +93,10 @@ const ProjectsSection = () => {
           </p>
         </ParagraphLight>
       </ProjectRight>
-      {/**
-       * PROJECT END
-       */}
+
       <ProjectLeft
         projectTitle={'To-Do app'}
-        techStack={['HTML5', 'CSS3', 'GitHub', 'JS', 'Figma', 'Netlify']}
+        techStack={['HTML5', 'CSS3']}
         buttonWatchItLive={'LINK TO THE SITE'}
         buttonDescription={'COMPONENT WITH ROUTE TO THE DESCRIPTION'}
         buttonGitHub={'GITHUB LINK'}

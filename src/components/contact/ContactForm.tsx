@@ -22,8 +22,8 @@ const ContactForm = () => {
   const formRef = useRef(
     null
   ) as React.MutableRefObject<HTMLFormElement | null>;
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
+  const isInView = useInView(formRef, { once: true });
 
   useEffect(() => {
     const delay = 6000;
@@ -86,7 +86,11 @@ const ContactForm = () => {
   const emailValue = watch('Your Email');
 
   return (
-    <form className="form" ref={formRef} onSubmit={onSubmitHandler}>
+    <form
+      className={isInView ? 'form' : 'form form--off'}
+      ref={formRef}
+      onSubmit={onSubmitHandler}
+    >
       <FormInput
         label="Your name"
         register={register}

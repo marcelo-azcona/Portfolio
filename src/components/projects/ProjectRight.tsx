@@ -1,8 +1,10 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { ProjectProps } from './ProjectsSection';
 import H3Header from '../UI/headings/H3Header';
 import H4Header from '../UI/headings/H4Header';
 import TechStack from '../UI/techstacks/TechStack';
 import LinkWhite from '../UI/links/LinkLight';
-import { ProjectProps } from './ProjectsSection';
 import ParagraphLight from '../UI/text/ParagraphLight';
 import './Projects.styles.scss';
 
@@ -14,10 +16,18 @@ const ProjectRight = ({
   children,
   techStack,
 }: ProjectProps) => {
+  const viewRef = useRef(null);
+  const isInView = useInView(viewRef, { once: true });
+
   return (
     <div className="project-right">
-      <div className="project-links">
-        <div className="project-links__btn">
+      <div
+        ref={viewRef}
+        className={
+          isInView ? 'project-links' : 'project-links project-links--off'
+        }
+      >
+        <div ref={viewRef} className="project-links__btn">
           <LinkWhite
             extraClass="link__light--bf"
             href={buttonWatchItLive}

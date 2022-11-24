@@ -5,7 +5,8 @@
   padding: 8rem 0;
 }
 
-.project-right {
+.project-right,
+.project-left {
   padding: 12rem 32rem 0rem 32rem;
   display: flex;
   justify-content: center;
@@ -13,6 +14,8 @@
 }
 
 .project-links {
+  transition: all 0.7s ease-out 0.5s;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -36,10 +39,15 @@
     height: 50%;
     margin-top: auto;
   }
+
+  &--off {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
 }
 
 .project-description {
-  flex: 1.4;
+  flex: 1.5;
 
   &__tech {
     display: flex;
