@@ -1,0 +1,17 @@
+@import '../general-styles.scss';
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background-color: $color-project-title-4;
+    content: '';
+    position: absolute;
+    left: calc(50% - 0.2rem);
+    width: 0.4rem;
+    height: 100%;
+  }
+}

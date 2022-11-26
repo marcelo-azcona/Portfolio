@@ -24,7 +24,7 @@ const ProjectRight = ({
       <div
         ref={viewRef}
         className={
-          isInView ? 'project-links' : 'project-links project-links--off'
+          isInView ? 'project-links' : 'project-links project-links--off-right'
         }
       >
         <div ref={viewRef} className="project-links__btn">
@@ -67,7 +67,13 @@ const ProjectRight = ({
         </div>
       </div>
 
-      <div className="project-description">
+      <div
+        className={
+          isInView
+            ? 'project-description'
+            : 'project-description project-description--off-right'
+        }
+      >
         <H3Header extraClass="h3header--white">{projectTitle}</H3Header>
         {children}
 

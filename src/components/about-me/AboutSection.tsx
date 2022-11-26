@@ -1,6 +1,7 @@
 import ParagraphDark from '../UI/text/ParagraphDark';
 import H2Header from '../UI/headings/H2Header';
 import AboutMe from './AboutMe';
+
 import './AboutMe.styles.scss';
 
 const AboutSection = () => {

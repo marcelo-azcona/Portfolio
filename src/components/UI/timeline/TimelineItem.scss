@@ -1,0 +1,115 @@
+@import '../general-styles.scss';
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
+  position: relative;
+  margin: 0.25rem 0;
+  width: 50%;
+
+  &:nth-child(odd) {
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding-left: 3rem;
+    padding-right: 0;
+
+    .timeline-item__content {
+      text-align: left;
+      align-items: flex-start;
+
+      &::after {
+        right: auto;
+        left: -0.75rem;
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .tag {
+        order: 1;
+        margin-left: auto;
+      }
+
+      time {
+        margin-left: 0rem;
+      }
+
+      .circle {
+        right: auto;
+        left: -4rem;
+      }
+    }
+  }
+
+  &__title {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  &__content {
+    width: 40rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+    max-width: 75%;
+    position: relative;
+    text-align: right;
+
+    &::after {
+      content: ' ';
+      background-color: #fff;
+      box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      right: -0.75rem;
+      top: calc(50% - 0.75rem);
+      transform: rotate(45deg);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    time {
+      color: #777;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: auto;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      margin: 1.2rem 0;
+      max-width: 25rem;
+    }
+
+    .tag {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      padding: 0.5rem;
+      text-transform: uppercase;
+
+      // @include responsive(tab-land1200) {
+      //   color: red;
+      // }
+    }
+
+    .circle {
+      background-color: #fff;
+      border: 3px solid $color-project-title-4;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - 0.75rem);
+      right: -4rem;
+      width: 2rem;
+      height: 2rem;
+      z-index: 100;
+    }
+  }
+}

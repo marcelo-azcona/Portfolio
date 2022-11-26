@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { ProjectProps } from './ProjectsSection';
 import H3Header from '../UI/headings/H3Header';
 import H4Header from '../UI/headings/H4Header';
@@ -14,9 +16,18 @@ const ProjectLeft = ({
   children,
   techStack,
 }: ProjectProps) => {
+  const viewRef = useRef(null);
+  const isInView = useInView(viewRef, { once: true });
+
   return (
     <div className="project-left">
-      <div className="project-description">
+      <div
+        className={
+          isInView
+            ? 'project-description'
+            : 'project-description project-description--off-left'
+        }
+      >
         <H3Header extraClass="h3header--white">{projectTitle}</H3Header>
         {children}
         <H4Header extraClass="h4header--white">Tech stack</H4Header>
@@ -28,7 +39,12 @@ const ProjectLeft = ({
         </div>
       </div>
 
-      <div className="project-links">
+      <div
+        ref={viewRef}
+        className={
+          isInView ? 'project-links' : 'project-links project-links--off-left'
+        }
+      >
         <div className="project-links__btn">
           <LinkWhite
             extraClass="link__light--bf"

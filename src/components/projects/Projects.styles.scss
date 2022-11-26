@@ -14,7 +14,7 @@
 }
 
 .project-links {
-  transition: all 0.7s ease-out 0.5s;
+  transition: all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.25s;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -40,19 +40,36 @@
     margin-top: auto;
   }
 
-  &--off {
+  &--off-right {
     opacity: 0;
     transform: translateX(-5rem);
+  }
+
+  &--off-left {
+    opacity: 0;
+    transform: translateX(5rem);
   }
 }
 
 .project-description {
   flex: 1.5;
+  opacity: 1;
+  transition: all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.25s;
 
   &__tech {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 3rem;
+  }
+
+  &--off-right {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  &--off-left {
+    opacity: 0;
+    transform: translateX(-5rem);
   }
 }

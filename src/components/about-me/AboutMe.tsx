@@ -7,27 +7,20 @@ import ParagraphBlack from '../UI/text/ParagraphDark';
 import IconBlack from '../UI/icon/IconBlack';
 import TechStack from '../UI/techstacks/TechStack';
 import LinkWhite from '../UI/links/LinkLight';
+import Timeline from '../UI/timeline/Timeline';
 import './AboutMe.styles.scss';
 
-const AboutMe = ({
-  projectTitle,
-  techStack,
-  children,
-}: {
+type AboutMeProps = {
   projectTitle: string;
   techStack: string[];
   children: React.ReactNode;
-}) => {
+};
+
+const AboutMe = ({ projectTitle, techStack, children }: AboutMeProps) => {
   return (
     <div className="about-container">
       <div className="about__left">
-        <div className="about__img-box">
-          <img
-            className="about__img"
-            src={hero1}
-            alt="Marcelo Azcona selfie."
-          />
-        </div>
+        <Timeline />
         <div className="about__resume-link">
           <LinkWhite
             href={'resume'}
